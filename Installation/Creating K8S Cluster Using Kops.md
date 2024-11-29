@@ -50,6 +50,12 @@ visit the page and install the latetst version of kubectl version
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 ```
 
+## Go back to the root directory /any other directory and check the kops and kubectl version
+```xml
+kubectl version
+kops version
+```
+
 ## Edit .bashrc for environment variables
 ```xml
 nano .bashrc
