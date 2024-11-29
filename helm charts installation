@@ -1,0 +1,50 @@
+Installing Helm
+
+Switch to the root user:
+sudo su -
+
+Navigate to the /usr/local/bin/ directory:
+cd /usr/local/bin/
+
+Download the Helm binary:
+
+Download the Helm v3.11.1 package for Linux:
+curl https://get.helm.sh/helm-v3.11.1-linux-amd64.tar.gz -o helm.tar.gz
+
+Extract the Helm binary:
+Extract the downloaded tarball:
+tar -zxvf helm.tar.gz
+
+Move the Helm binary to /usr/local/bin:
+After extraction, move the Helm binary to a system-wide executable path:
+sudo mv linux-amd64/helm /usr/local/bin/helm
+Verify Helm Installation
+
+Check the Helm version:
+To verify that Helm is installed correctly, run the following command:
+helm version
+
+Expected Output:
+version.BuildInfo{Version:"v3.11.1", GitCommit:"c8498263b1c6e5d0fd276b58eab19b187c7e93c6", GitTreeState:"clean", GoVersion:"go1.18.9"}
+Working with Helm Charts
+
+Add a Helm Chart Repository:
+Add the Bitnami repository, which contains many pre-packaged charts, including popular software like nginx:
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+Update Helm Repositories:
+Update the repository information to ensure you have the latest charts:
+helm repo update
+
+Deploying a Helm Release
+Install nginx using the Bitnami chart:
+Deploy the nginx chart from the Bitnami repository. This will install nginx with the release name my-release:
+helm install my-release bitnami/nginx
+
+List Helm Releases:
+To check the status of all Helm releases in your system, use the following command:
+helm list
+
+Expected Output:
+NAME        NAMESPACE   REVISION    UPDATED                                 STATUS    CHART           APP VERSION
+my-release  default     1           2024-11-29 12:30:45.799123 +0000 UTC   deployed  nginx-9.5.1     1.21.3
