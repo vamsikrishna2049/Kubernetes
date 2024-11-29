@@ -14,7 +14,8 @@ apt install gawk           # Essential utilities like  gawk
 apt install curl wget      # Installing curl and wget package
 apt install tar nano       # Installing tar and nano package
 apt install net-tools -y
-apt install iputils-ping
+apt install unzip -y
+apt install iputils-ping -y
 ```
 
 ## Installing AWS CLI on Ubuntu Machine
