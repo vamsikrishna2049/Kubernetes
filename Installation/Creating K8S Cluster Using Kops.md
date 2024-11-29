@@ -80,6 +80,13 @@ alias ku='kubectl'
 source .bashrc
 ```
 
+## Install KUBECTL Neat
+kubectl-neat is a useful command-line tool to remove unnecessary clutter and metadata from your Kubernetes manifests, making them more readable and maintainable. It works seamlessly with kubectl to fetch and clean up manifests in one command.
+
+```xml
+https://github.com/itaysk/kubectl-neat/releases/tag/v2.0.4
+```
+
 # Creating K8S Cluster
 ## KOPS Create Cluster (1Control plane and 2 Nodes)
 ```xml
