@@ -61,16 +61,19 @@ kops version
 nano .bashrc
 ```
 
-## Go back to the root directory (cd)   
-Start creating K8s cluster using kops 
-
-## Assign the values
+## Assign the values in .bashrc file
 ```xml
 export KOPS_STATE_STORE="s3://practisedomain.cloud"
 export ZONES="us-east-1a,us-east-1b,us-east-1c"
 export CONTROL_PLANE_SIZE="t3.medium"
 export NODE_SIZE="t3.medium"
+alias ku='kubectl'
 ```
+## Apply the changes .bashrc
+```xml
+source .bashrc
+```
+
 ## Cretae K8S Cluster
 # KOPS Create Cluster(1Control plane and 2 Nodes)
 ```xml
