@@ -74,8 +74,8 @@ alias ku='kubectl'
 source .bashrc
 ```
 
-## Cretae K8S Cluster
-# KOPS Create Cluster(1Control plane and 2 Nodes)
+# Creating K8S Cluster
+## KOPS Create Cluster (1Control plane and 2 Nodes)
 ```xml
 kops create cluster --name=practisedomain.cloud \
 --state=s3://practisedomain.cloud \
@@ -92,7 +92,7 @@ kops create cluster --name=practisedomain.cloud \
 --dry-run --output=yaml                     #(To perform dry run)
 ```
 
-## 3Node KOPS Create Cluster (3 Master nodes and 3 Worker Nodes)
+## KOPS Create Cluster (3 Master nodes and 3 Worker Nodes)
 ```xml
 kops create cluster --name=practisedomain.cloud \
 --state=s3://practisedomain.cloud \
