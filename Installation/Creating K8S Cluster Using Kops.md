@@ -37,11 +37,13 @@ ssh-keygen -t rsa
 If we set the directory to /usr/local/bin, we can access the kops and kubectl anywhere in the linux maxhine.
 
 ## Install the Kops (https://github.com/kubernetes/kops/releases)
+visit the page and install the latets version of kops version
 ```xml
 wget https://github.com/kubernetes/kops/releases/download/v1.30.2/kops-linux-amd64
 ```
 
 ## Install Kubectl in ubuntu machine (https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+visit the page and install the latets version of kubectl version
 ```xml
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 ```
