@@ -88,7 +88,8 @@ kops create cluster --name=practisedomain.cloud \
 --control-plane-volume-size=10 \
 --node-volume-size=10 \
 --ssh-public-key=~/.ssh/id_rsa.pub \
---dns-zone=practisedomain.cloud
+--dns-zone=practisedomain.cloud \
+--yes \
 --dry-run --output=yaml                     #(To perform dry run)
 ```
 
@@ -106,6 +107,7 @@ kops create cluster --name=practisedomain.cloud \
 --node-volume-size=10 \
 --ssh-public-key=~/.ssh/id_rsa.pub \
 --dns-zone=practisedomain.cloud \
+--yes \
 --dry-run --output=yaml      #(To perform dry run)
 ```
 
