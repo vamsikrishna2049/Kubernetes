@@ -25,6 +25,12 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
+# Login to AWS CLI
+```xml
+aws configure
+```
+Enter the access key, secret access key, region and output format(json)
+
 ## Generate Key-Gen Pair
 ```xml
 ssh-keygen -t rsa
@@ -82,8 +88,8 @@ kops create cluster --name=practisedomain.cloud \
 --zones=us-east-1a,us-east-1b,us-east-1c \
 --node-count=2 \
 --control-plane-count=1 \
---node-size=t3.medium \
---control-plane-size=t3.medium \
+--node-size=$NODE_SIZE \
+--control-plane-size=$CONTROL_PLANE_SIZE \
 --control-plane-zones=us-east-1a \
 --control-plane-volume-size=10 \
 --node-volume-size=10 \
