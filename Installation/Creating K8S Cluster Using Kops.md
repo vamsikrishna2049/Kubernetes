@@ -23,6 +23,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 ```
+
 ## Generate Key-Gen Pair
 ```xml
 ssh-keygen -t rsa
@@ -37,13 +38,13 @@ ssh-keygen -t rsa
 If we set the directory to /usr/local/bin, we can access the kops and kubectl anywhere in the linux maxhine.
 
 ## Install the Kops (https://github.com/kubernetes/kops/releases)
-visit the page and install the latets version of kops version
+visit the page and install the latetst version of kops version
 ```xml
 wget https://github.com/kubernetes/kops/releases/download/v1.30.2/kops-linux-amd64
 ```
 
 ## Install Kubectl in ubuntu machine (https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-visit the page and install the latets version of kubectl version
+visit the page and install the latetst version of kubectl version
 ```xml
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 ```
@@ -95,7 +96,7 @@ kops create cluster --name=practisedomain.cloud \
 --node-volume-size=10 \
 --ssh-public-key=~/.ssh/id_rsa.pub \
 --dns-zone=practisedomain.cloud \
---dry-run --output=yaml
+--dry-run --output=yaml      #(To perform dry run)
 ```
 
 ## Validate K8S Cluster
@@ -105,7 +106,7 @@ kops validate cluster --wait 10m --state="s3://practisedomain.cloud"
 
 ## Delete K8S Cluster
 ```xml
-kops delete cluster --name<domainName> --state="s3://practisedomain.cloud"
+kops delete cluster --name practisedomain.cloud --state="s3://practisedomain.cloud"
 ```
 
 ## Resources:
