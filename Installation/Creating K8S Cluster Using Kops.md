@@ -133,7 +133,7 @@ kops validate cluster --wait 10m --state="s3://practisedomain.cloud"
 
 ## Delete K8S Cluster
 ```xml
-kops delete cluster --name practisedomain.cloud --state="s3://practisedomain.cloud"
+kops delete cluster --name practisedomain.cloud --state="s3://practisedomain.cloud" --yes
 ```
 
 ## Resources:
