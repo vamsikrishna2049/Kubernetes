@@ -47,15 +47,15 @@ Certbot will prompt you to create a TXT record in your DNS provider (Route53 in 
 ## Log in to your AWS Route53 console.
 Select the hosted zone for your domain (practisedomain.cloud).
 Add a new DNS record:
-<br/>Record Name: 
+Record Name: 
 ```xml
 _acme-challenge
 ```
-<br/>Record Type: 
+Record Type: 
 ```xml
 TXT
 ```
-<br/>Record Value: 
+Record Value: 
 ```xml
 9Y2EdG0nT0QNaJtGtIN-Euu1zc9ZVuCz2mhAe_SO3os
 ```
