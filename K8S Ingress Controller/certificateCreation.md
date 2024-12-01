@@ -40,8 +40,9 @@ certbot -h
 <br>--agree-tos: Agree to Let's Encrypt's terms of service.
 <br>-d "*.practisedomain.cloud": Request a wildcard certificate for the domain practisedomain.cloud.
 
-## Approve the Terms of Service
-## Once the command is executed, Certbot will ask for confirmation of the Terms of Service. Type Yes to proceed.
+#### Approve the Terms of Service
+Once the command is executed, Certbot will ask for confirmation of the Terms of Service. 
+#### Type Yes to proceed.
 
 # 3. DNS Validation Setup in AWS Route53
 Add DNS Record in Route53.
