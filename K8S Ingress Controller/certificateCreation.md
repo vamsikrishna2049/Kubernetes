@@ -73,9 +73,13 @@ It may take several minutes for the DNS record to propagate. Certbot will attemp
 # 4. Finalizing and Locating SSL Certificate Files
 Once the validation is complete and the certificate is issued, you can find the certificate and private key in the following directory:
 
+# Certificate (tls.crt):
 ``` xml
-Certificate (tls.crt): /etc/letsencrypt/live/practisedomain.cloud/fullchain.pem
-Private Key (tls.key): /etc/letsencrypt/live/practisedomain.cloud/privkey.pem
+/etc/letsencrypt/live/practisedomain.cloud/fullchain.pem
+```
+# Private Key (tls.key):
+``` xml
+/etc/letsencrypt/live/practisedomain.cloud/privkey.pem
 ```
 ## Certificate Expiry Date
 Your SSL certificate will be valid for 90 days. The expiration date can be found in the following location:
