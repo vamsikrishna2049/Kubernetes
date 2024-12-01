@@ -17,10 +17,10 @@ sudo snap install --classic certbot
 cd /snap/bin
 cp certbot /usr/local/bin/
 ```
-<br>This ensures you can run certbot from any directory.
+This ensures you can run certbot from any directory.
 
 ### Verify the Installation
-<br>To confirm that Certbot was installed successfully, run:
+To confirm that Certbot was installed successfully, run:
 ```xml
 certbot -h
 ```
