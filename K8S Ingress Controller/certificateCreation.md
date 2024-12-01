@@ -26,14 +26,14 @@ This will display the Certbot help menu with available commands and options.
 # 2. Requesting an SSL Certificate -Command to Request the Certificate
 Run the following command to request an SSL certificate for your wildcard domain *.practisedomain.cloud using DNS-01 challenge:
 ```xml
-    certbot certonly --manual --preferred-challenges dns --key-type rsa --email vamsi201997@gmail.com \
+    certbot certonly --manual --preferred-challenges dns --key-type rsa --email vamsikrishna2049@gmail.com \
       --server https://acme-v02.api.letsencrypt.org/directory --agree-tos -d "*.practisedomain.cloud"
 ```
 Explanation of Flags:
 --manual: Use manual mode to handle DNS challenges.
 --preferred-challenges dns: Specifies the DNS-01 challenge type.
 --key-type rsa: Use RSA key algorithm.
---email vamsi201997@gmail.com: Contact email for the certificate.
+--email vamsikrishna2049@gmail.com: Contact email for the certificate.
 --agree-tos: Agree to Let's Encrypt's terms of service.
 -d "*.practisedomain.cloud": Request a wildcard certificate for the domain practisedomain.cloud.
 
