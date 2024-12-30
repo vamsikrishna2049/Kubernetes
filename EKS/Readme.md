@@ -14,7 +14,7 @@
   
 ### **Pricing**
 - EKS has **two charges**:
-  - **Control Plane Charge**: $0.10 per hour.
+  - **Control Plane Charge**: 0.10 per hour.
   - **Worker Node Charge**: Based on **instance type** and the **number of instances**.
 
 ---
@@ -66,9 +66,9 @@
 Execute the following commands to install `kubectl`:
 
 ```bash
-$ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-$ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-$ kubectl version --client
+ curl -LO "https://dl.k8s.io/release/(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+ kubectl version --client
 ```
 
 ##### **Install AWS CLI**
@@ -76,10 +76,10 @@ $ kubectl version --client
 To install the AWS CLI on your client machine:
 
 ```bash
-$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-$ sudo yum install unzip
-$ unzip awscliv2.zip
-$ sudo ./aws/install
+ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+ sudo yum install unzip
+ unzip awscliv2.zip
+ sudo ./aws/install
 ```
 
 ##### **Configure AWS CLI with Credentials**
@@ -87,7 +87,7 @@ $ sudo ./aws/install
 Set up AWS CLI with your credentials:
 
 ```bash
-$ aws configure
+ aws configure
 # Enter your AWS Access Key and Secret Access Key.
 ```
 
@@ -96,7 +96,7 @@ $ aws configure
 ##### **Check the List of EKS Clusters**
 
 ```bash
-$ aws eks list-clusters
+ aws eks list-clusters
 ```
 
 ---
@@ -125,8 +125,8 @@ $ aws eks list-clusters
 Once the node group is added, you can check the status of your nodes:
 
 ```bash
-$ kubectl get nodes
-$ kubectl get pods --all-namespaces
+ kubectl get nodes
+ kubectl get pods --all-namespaces
 ```
 
 ---
