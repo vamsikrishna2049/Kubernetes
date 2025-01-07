@@ -85,34 +85,3 @@ spec:
           type: Utilization
           averageUtilization: 50
 ```
-
-
-#
-```xml
-
-```
-
-
-#
-```xml
-
-```
-
-#
-```xml
-
-```
-
-
-
-
-#
-```xml
-
-```
-
-
-#
-```xml
-
-```
