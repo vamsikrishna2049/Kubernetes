@@ -2,6 +2,7 @@ The first thing to understand about Kubernetes is that it's a distributed system
 
 The following Kubernetes architecture diagram illustrates all the components of a Kubernetes cluster and how external systems interact with it.
 
+![Alt Text](Nodes/images/02-k8s-architecture.gif)
 
 
 A Kubernetes cluster consists of both control plane nodes and worker nodes.
