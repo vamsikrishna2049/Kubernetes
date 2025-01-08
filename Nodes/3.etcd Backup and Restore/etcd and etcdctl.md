@@ -2,7 +2,7 @@ etcd is an integral part of the cluster. All the cluster objects and their state
 
 Here are few things you should know about etcd.
 1. It is a consistent, distributed, and secure key-value store.
-2. It uses ![raft protocol](https://raft.github.io/).
+2. It uses [raft protocol](https://raft.github.io/).
 3. It stores Kubernetes cluster configurations, all API objects, object states, and service discovery details.
 4. etcd stores all objects under the /registry directory key in key-value format. For example, information on a pod named Nginx in the default namespace can be found under /registry/pods/default/nginx
 
