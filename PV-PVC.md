@@ -1,5 +1,7 @@
 In Kubernetes (K8s), **Persistent Volumes (PVs)** and **Persistent Volume Claims (PVCs)** are objects used to manage storage for applications. They abstract the underlying storage infrastructure and provide a way to request and allocate persistent storage for your containers. Below are the detailed steps on how to use **PV** and **PVC** in Kubernetes.
 
+# Example at Below
+
 ### 1. **Understanding PV (Persistent Volume)**
 A **Persistent Volume (PV)** is a piece of storage in the Kubernetes cluster that has been provisioned by an administrator or dynamically provisioned using storage classes. A PV can be backed by different types of storage solutions, such as local disks, cloud storage (e.g., AWS EBS, GCP Persistent Disk), NFS, or more advanced storage systems.
 
@@ -207,6 +209,55 @@ kubectl delete pvc my-pvc
 If the PV has the `Delete` reclaim policy, the associated volume will also be deleted.
 
 ---
+
+
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ebs-pv
+spec:
+  capacity:
+    storage: 10Gi  # Size of the EBS volume
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce  # Can be mounted as read-write by a single node
+  persistentVolumeReclaimPolicy: Retain  # Optionally: Retain, Recycle, or Delete
+  storageClassName: standard  # Must match the storage class if used
+  awsElasticBlockStore:
+    volumeID: "vol-009ae47f050c7986e"  # EBS Volume ID
+    fsType: ext4  # File system type (ext4 is commonly used)
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi  # Size of the storage you need
+  storageClassName: standard  # Should match with the PV StorageClass
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-app
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: ebs-storage
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: ebs-storage
+    persistentVolumeClaim:
+      claimName: ebs-pvc
+```
 
 ### Conclusion
 1. **Persistent Volumes (PVs)** represent actual storage resources in the Kubernetes cluster.
