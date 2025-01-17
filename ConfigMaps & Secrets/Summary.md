@@ -67,8 +67,7 @@ Ensure you have the following setup:
    Now, create a Kubernetes Deployment that will reference the **Secret** for the sensitive PostgreSQL credentials and the **ConfigMap** for the database configuration.
 
    Create a file called `myapp-deployment.yaml` and add the following content:
-
-   ```yaml
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -116,7 +115,6 @@ spec:
               key: POSTGRES_DB
         ports:
         - containerPort: 80
-
 ```
 
    **Explanation**:
