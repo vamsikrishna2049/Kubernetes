@@ -1,3 +1,4 @@
+
 ### **ConfigMaps**
 
 **Purpose:**
@@ -11,30 +12,33 @@
 - **Centralized Management:** ConfigMaps provide a centralized way to manage configuration for multiple applications or services.
 
 **Example:**
-Here’s an example of creating a ConfigMap:
+1. Create the Configmap using Imperative way    
 
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: my-config
-data:
-  database_url: "mysql://my-db:3306"
-  app_mode: "production"
+ ```bash
+kubectl create configmap postgres-config \
+--from-literal=POSTGRES_HOST=database-1.ctsmim8wsqwe.us-east-1.rds.amazonaws.com \
+--from-literal=POSTGRES_PORT=5432 \
+--from-literal=POSTGRES_DB=postgres
 ```
 
-You can then mount this ConfigMap as environment variables or files in a Pod:
+2. Create a file named ```configmap.yaml```
+```bash
+nano configmap.yaml
+```
 
+3. Update the below code (Declarative way)
 ```yaml
 apiVersion: v1
-kind: Pod
+data:
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: database-1.ctsmim8wsqwe.us-east-1.rds.amazonaws.com
+  POSTGRES_PORT: "5432"
+kind: ConfigMap
 metadata:
-  name: my-app
-spec:
-  containers:
-    - name: my-container
-      image: my-image:latest
-      envFrom:
-        - configMapRef:
-            name: my-config
+  name: postgres-config
+```
+
+4. Apply the ConfigMap
+```bash
+kubectl apply -f configmap.yaml
 ```
