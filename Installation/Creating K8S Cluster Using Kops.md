@@ -56,7 +56,7 @@ visit the page and install the latetst version of kops version
 wget https://github.com/kubernetes/kops/releases/download/v1.30.2/kops-linux-amd64
 ```
 
-## Install [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) in ubuntu machine 
+## Install [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 visit the kubectl page and install the latetst version of kubectl version
 ```bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
