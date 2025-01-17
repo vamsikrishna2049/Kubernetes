@@ -42,3 +42,54 @@ metadata:
 ```bash
 kubectl apply -f configmap.yaml
 ```
+
+5. ManifestFile
+```bash
+nano deployment.yaml
+```
+
+update the below code in the newly created file
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp-container
+        image: your-image:latest
+        env:
+        # Load non-sensitive values from the ConfigMap
+        - name: POSTGRES_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_HOST
+        - name: POSTGRES_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_PORT
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: POSTGRES_DB
+        ports:
+        - containerPort: 5432
+```
+
+6. Apply the deployment
+   ```bash
+   kubectl apply -f deployment.yaml
+   ```
