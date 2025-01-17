@@ -117,7 +117,7 @@ spec:
         ports:
         - containerPort: 80
 
-   ```
+```
 
    **Explanation**:
    - The `POSTGRES_USER` and `POSTGRES_PASSWORD` environment variables are loaded from the **Secret**.
