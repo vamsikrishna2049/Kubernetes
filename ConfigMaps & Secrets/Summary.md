@@ -152,35 +152,26 @@ spec:
 To ensure that your pod can connect to the PostgreSQL database, you can run a shell inside your pod and test the connection.
 
 1. **Exec into the Pod**:
-
    ```bash
    kubectl exec -it <pod-name> -- /bin/bash
    ```
 
 2. **Check PostgreSQL Connection** (using `psql`):
-
    Inside the pod, use the following command to connect to the PostgreSQL database:
-
    ```bash
    psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -p $POSTGRES_PORT
    ```
-
    You should be able to connect to your PostgreSQL database if everything is set up correctly.
 
-
-
 3. Try pinging the RDS instance:
-
 ```bash
-
 ping database-1.ctsmim8wsqwe.us-east-1.rds.amazonaws.com
-```bash
+```
 
 4. Check if Kubernetes Pod is Running in the Same VPC/Subnet
 
 
 #### **Step 7: Clean Up (Optional)**
-
 If you want to delete the resources you created, you can use the following commands:
 
 1. **Delete the Deployment**:
