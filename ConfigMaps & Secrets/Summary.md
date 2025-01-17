@@ -71,20 +71,21 @@ Ensure you have the following setup:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: postgres-client
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapp
+      app: postgres-client
   template:
     metadata:
       labels:
-        app: myapp
+        app: postgres-client
     spec:
       containers:
-      - name: myapp-container
-        image: your-image:latest
+      - name: postgres-client-container
+        image: postgres:latest   # Using the official PostgreSQL image
+        command: ["sleep", "3600"]  # Keeps the pod running to allow manual connection via exec
         env:
         # Load sensitive values from the secret
         - name: POSTGRES_USER
