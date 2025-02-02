@@ -1,0 +1,65 @@
+ls /etc/kubernetes/manifests
+Location for yaml files for the pods.
+You just create the YAML file. No need to run any command, pod will create automatically.
+If any YAML file is deleted, then corresponding pod will be deleted.
+
+how many ways you can create an K8s pod?
+07:18 run, create, YAML, Deployments, statefulset Static pod( /etc/kuberenetes/manifests), Daemonsets, bare pod, replica-set pod, helm
+
+POd, replicaset, deployment, services, 
+	statefulsets,
+	Daemonsets,
+	static path
+
+How to check the static pod location?
+ps -ef | grep static
+--config= /etc/kubernetes/manifests
+
+How to schedule pods and probe?
+Note:
+Whenever we give an instruction to create a pod to the master node. Scheduler from master node will decide to schedule the pod in node01/node02,.. location. 
+
+pod Scheduling; 
+We can decide this pod must be run on node01.
+
+If node01 is not available, then it will be in pending stage.
+
+Scheduling the pods:
+1. NodeName			Only Node name
+2. NodeSelector			All Labels names must be matched. else it will be in pending stage.
+3. PodAffinity			inside a node atleast single pod must be run + labels must be matched.
+4. Pod AntiAffinity		Exactly opp to pod affinity. i.e., pod must be run on any node + labels must not be matched.
+5. NodeAffinity			
+	preferedDuringSchedulingIgnoredDuringExecution
+	requiredDuringSchedulingIgnoredDuringExecution
+6. Taint and Toleration
+
+
+Node Selector Vs NodeAffinity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
